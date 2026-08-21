@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}
+History | PhishGuard AI
+{% endblock %}
+
+{% block content %}
+
+<h1>📜 Scan History</h1>
+
+<br>
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Search URL..."
+onkeyup="searchTable()">
+
+<br><br>
+
+<table id="historyTable">
+
+<tr>
+
+<th>Date</th>
+
+<th>URL</th>
+
+<th>Result</th>
+
+<th>Confidence</th>
+
+</tr>
+
+{% for row in history %}
+
+<tr>
+
+<td>{{ row.Date }}</td>
+
+<td>{{ row.URL }}</td>
+
+<td>{{ row.Result }}</td>
+
+<td>{{ row.Confidence }}%</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<script>
+
+function searchTable(){
+
+let input=document.getElementById("searchInput");
+
+let filter=input.value.toUpperCase();
+
+let table=document.getElementById("historyTable");
+
+let tr=table.getElementsByTagName("tr");
+
+for(let i=1;i<tr.length;i++){
+
+let td=tr[i].getElementsByTagName("td")[1];
+
+if(td){
+
+let txt=td.textContent||td.innerText;
+
+tr[i].style.display=txt.toUpperCase().indexOf(filter)>-1?"":"none";
+
+}
+
+}
+
+}
+
+</script>
+
+{% endblock %}

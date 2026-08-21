@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | PhishGuard AI{% endblock %}
+
+{% block content %}
+
+<h1>📊 Dashboard</h1>
+
+<div class="dashboard-grid">
+
+    <div class="card total">
+        <h3>📊 Total Scans</h3>
+        <h1>{{ total }}</h1>
+    </div>
+
+    <div class="card safe">
+        <h3>🟢 Safe</h3>
+        <h1>{{ safe }}</h1>
+    </div>
+
+    <div class="card phishing">
+        <h3>🔴 Phishing</h3>
+        <h1>{{ phishing }}</h1>
+    </div>
+
+    <div class="card malware">
+        <h3>🟣 Malware</h3>
+        <h1>{{ malware }}</h1>
+    </div>
+
+    <div class="card defacement">
+        <h3>🟠 Defacement</h3>
+        <h1>{{ defacement }}</h1>
+    </div>
+
+    <div class="card suspicious">
+        <h3>🟡 Suspicious</h3>
+        <h1>{{ suspicious }}</h1>
+    </div>
+
+</div>
+
+<div class="status-card">
+
+<h2>🤖 System Status</h2>
+
+<p>AI Model : <span class="online">🟢 Online</span></p>
+
+<p>Protection : <span class="online">🛡️ Active</span></p>
+
+<p>Version : v1.0</p>
+
+<p>Last Scan : {{ recent[-1].Date if recent else "No Scan Yet" }}</p>
+
+</div>
+
+<br>
+
+<h2>📋 Recent Scans</h2>
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>URL</th>
+<th>Result</th>
+<th>Confidence</th>
+</tr>
+
+{% for row in recent|reverse %}
+
+<tr>
+
+<td>{{ row.Date }}</td>
+
+<td>{{ row.URL }}</td>
+
+<td>{{ row.Result }}</td>
+
+<td>{{ row.Confidence }}%</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<div class="quick-actions">
+
+<a href="/scan">
+<button class="action-btn">
+🔍 Scan New Website
+</button>
+</a>
+
+<a href="/history">
+<button class="action-btn">
+📜 View History
+</button>
+</a>
+
+<a href="/clear_history">
+<button class="delete-btn">
+🗑️ Clear History
+</button>
+</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}
+Scan Website | PhishGuard AI
+{% endblock %}
+
+{% block content %}
+
+<div class="scan-container">
+
+    <div class="scan-card">
+
+        <div class="scanner-header">
+
+            <h1>🛡️ AI Website Security Scanner</h1>
+
+            <p>
+                Detect phishing, malware, defacement and suspicious websites using Artificial Intelligence.
+            </p>
+
+        </div>
+
+        <form id="scanForm" action="/predict" method="POST">
+
+            <div class="input-group">
+
+                <span class="icon">🌐</span>
+
+                <input
+                    type="text"
+                    name="url"
+                    placeholder="https://example.com"
+                    required>
+
+            </div>
+
+            <br>
+
+            <button class="scan-btn" type="submit">
+
+                🔍 Scan Website
+
+            </button>
+
+        </form>
+
+        <div id="loading" style="display:none;">
+
+            <br>
+
+            <h3>🤖 AI Engine Running...</h3>
+
+            <p>Analyzing website security...</p>
+
+            <div class="loader"></div>
+
+        </div>
+
+    </div>
+
+    {% if prediction %}
+
+    <br>
+
+    <div class="result-card {{ result_class }}">
+
+        <h2>{{ prediction }}</h2>
+
+        <div class="confidence-box">
+
+            🎯 AI Confidence
+
+            <h1>{{ confidence }}%</h1>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="analysis-card">
+
+        <h2>🛡️ Security Analysis</h2>
+
+        <ul>
+
+            {% for reason in reasons %}
+
+            <li>{{ reason }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <br>
+
+   <div class="bottom-cards">
+
+    <div class="risk-card">
+
+        <h2>📊 Overall Risk Level</h2>
+
+        <h1>{{ risk_level }}</h1>
+
+    </div>
+
+    <div class="tip-card">
+
+        <h2>💡 Cyber Safety Tip</h2>
+
+        <p>{{ cyber_tip }}</p>
+
+    </div>
+
+</div>
+
+    {% endif %}
+
+</div>
+
+<script>
+
+document.getElementById("scanForm").addEventListener("submit", function(){
+
+    document.getElementById("loading").style.display="block";
+
+});
+
+</script>
+
+{% endblock %}
