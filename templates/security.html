@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}
+Security & Data Protection | PhishGuard AI
+{% endblock %}
+
+{% block content %}
+
+<div class="info-page">
+
+    <div class="info-hero">
+        <div class="info-icon">🔐</div>
+
+        <h1>Security & Data Protection</h1>
+
+        <p>
+            Learn how cryptographic hashing and secure data-handling
+            techniques help protect digital information.
+        </p>
+    </div>
+
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <div class="info-card-icon">🔑</div>
+
+            <h2>SHA-256 Hashing</h2>
+
+            <p>
+                SHA-256 is a cryptographic hash function that converts
+                input data into a fixed-length 256-bit hash value.
+            </p>
+
+            <div class="security-example">
+
+                <strong>Example</strong>
+
+                <p>
+                    Input:
+                    <code>PhishGuard AI</code>
+                </p>
+
+                <p>
+                    The original text can be transformed into a
+                    one-way hash representation.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-card-icon">🛡️</div>
+
+            <h2>Data Protection</h2>
+
+            <p>
+                Sensitive information should not be unnecessarily
+                exposed or stored in plain text.
+            </p>
+
+            <ul>
+                <li>Use secure authentication.</li>
+                <li>Hash passwords instead of storing them directly.</li>
+                <li>Validate user input.</li>
+                <li>Minimize collection of sensitive information.</li>
+                <li>Protect application logs and stored data.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-card-icon">🔒</div>
+
+            <h2>Why Cryptography Matters</h2>
+
+            <p>
+                Cryptographic techniques support important security
+                goals such as integrity, authentication and protection
+                of sensitive information.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock %}

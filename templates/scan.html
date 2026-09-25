@@ -6,127 +6,373 @@ Scan Website | PhishGuard AI
 
 {% block content %}
 
-<div class="scan-container">
+<div class="phish-scan-page">
 
-    <div class="scan-card">
+    <!-- ================= HEADER ================= -->
 
-        <div class="scanner-header">
+    <section class="scan-hero">
 
-            <h1>🛡️ AI Website Security Scanner</h1>
+        <div class="scan-shield">
+            🛡️
+        </div>
+
+        <div>
+            <h1>AI Website Security Scanner</h1>
 
             <p>
-                Detect phishing, malware, defacement and suspicious websites using Artificial Intelligence.
+                Detect phishing, malware, defacement and suspicious
+                websites using Artificial Intelligence.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= URL SCANNER ================= -->
+
+    <section class="scanner-box">
+
+        <form id="scanForm" action="/predict" method="POST">
+
+            <div class="url-row">
+
+                <div class="url-input-box">
+
+                    <span class="url-icon">🌐</span>
+
+                    <input
+                        type="text"
+                        name="url"
+                        placeholder="https://example.com"
+                        autocomplete="off"
+                        required>
+
+                </div>
+
+                <button
+                    class="professional-scan-btn"
+                    type="submit">
+
+                    🔍 Scan Website
+
+                </button>
+
+            </div>
+
+            <div class="example-url">
+
+                Example:
+                <strong>https://google.com</strong>
+
+            </div>
+
+        </form>
+
+
+        <!-- LOADING -->
+
+        <div id="loading" class="scan-loading">
+
+            <div class="loading-spinner"></div>
+
+            <h3>AI Engine Running...</h3>
+
+            <p>
+                Analyzing website security indicators
             </p>
 
         </div>
 
-        <form id="scanForm" action="/predict" method="POST">
+    </section>
 
-            <div class="input-group">
-
-                <span class="icon">🌐</span>
-
-                <input
-                    type="text"
-                    name="url"
-                    placeholder="https://example.com"
-                    required>
-
-            </div>
-
-            <br>
-
-            <button class="scan-btn" type="submit">
-
-                🔍 Scan Website
-
-            </button>
-
-        </form>
-
-        <div id="loading" style="display:none;">
-
-            <br>
-
-            <h3>🤖 AI Engine Running...</h3>
-
-            <p>Analyzing website security...</p>
-
-            <div class="loader"></div>
-
-        </div>
-
-    </div>
 
     {% if prediction %}
 
-    <br>
+    <!-- ================= RESULT ================= -->
 
-    <div class="result-card {{ result_class }}">
+    <section class="professional-result {{ result_class }}">
 
-        <h2>{{ prediction }}</h2>
+        <div class="result-icon">
 
-        <div class="confidence-box">
-
-            🎯 AI Confidence
-
-            <h1>{{ confidence }}%</h1>
+            {% if result_class == "safe" %}
+                ✓
+            {% elif result_class == "phishing" %}
+                !
+            {% elif result_class == "malware" %}
+                !
+            {% elif result_class == "defacement" %}
+                !
+            {% else %}
+                ?
+            {% endif %}
 
         </div>
 
+
+        <div class="result-main">
+
+            <h2>{{ prediction }}</h2>
+
+            <p>
+
+                {% if result_class == "safe" %}
+
+                    This website appears to be safe based on
+                    the available security indicators.
+
+                {% elif result_class == "phishing" %}
+
+                    Potential phishing indicators were detected.
+
+                {% elif result_class == "malware" %}
+
+                    The website has indicators associated
+                    with potentially harmful content.
+
+                {% elif result_class == "defacement" %}
+
+                    The website may contain indicators
+                    associated with defacement.
+
+                {% else %}
+
+                    Some suspicious indicators were detected.
+                    Review the analysis below.
+
+                {% endif %}
+
+            </p>
+
+        </div>
+
+
+        <div class="confidence-area">
+
+            <span>AI Confidence</span>
+
+            <strong>{{ confidence }}%</strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ANALYSIS + RISK ================= -->
+
+    <div class="scan-grid">
+
+
+        <!-- SECURITY ANALYSIS -->
+
+        <section class="security-card">
+
+            <div class="card-heading">
+
+                <div class="heading-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <h2>Security Analysis</h2>
+
+                    <span>
+                        URL security indicators
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            {% if reasons %}
+
+            <div class="security-list">
+
+                {% for reason in reasons %}
+
+                <div class="security-item">
+
+                    <span class="security-status">⚠️</span>
+
+                    <span>{{ reason }}</span>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <div class="all-clear">
+
+                <div class="clear-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>All available checks passed</strong>
+
+                    <p>
+                        No additional suspicious indicators
+                        were detected by the rule-based checks.
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </section>
+
+
+
+        <!-- RIGHT COLUMN -->
+
+        <div class="right-scan-column">
+
+
+            <!-- RISK -->
+
+            <section class="risk-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        📊
+                    </div>
+
+                    <div>
+
+                        <h2>Overall Risk Level</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="risk-display">
+
+    {% if risk_level == "🟢 LOW" %}
+
+    <div class="risk-dot low"></div>
+
+    <div>
+        <strong>LOW</strong>
+        <span>
+            Minimal risk detected
+        </span>
     </div>
 
-    <br>
 
-    <div class="analysis-card">
+    {% elif risk_level == "🟡 MEDIUM" %}
 
-        <h2>🛡️ Security Analysis</h2>
+    <div class="risk-dot medium"></div>
 
-        <ul>
-
-            {% for reason in reasons %}
-
-            <li>{{ reason }}</li>
-
-            {% endfor %}
-
-        </ul>
-
+    <div>
+        <strong>MEDIUM</strong>
+        <span>
+            Suspicious indicators detected
+        </span>
     </div>
 
-    <br>
 
-   <div class="bottom-cards">
+    {% elif risk_level == "🔴 HIGH" %}
 
-    <div class="risk-card">
+    <div class="risk-dot high"></div>
 
-        <h2>📊 Overall Risk Level</h2>
-
-        <h1>{{ risk_level }}</h1>
-
+    <div>
+        <strong>HIGH</strong>
+        <span>
+            Potential security threat detected
+        </span>
     </div>
 
-    <div class="tip-card">
 
-        <h2>💡 Cyber Safety Tip</h2>
+    {% else %}
 
-        <p>{{ cyber_tip }}</p>
+    <div class="risk-dot medium"></div>
 
+    <div>
+        <strong>UNKNOWN</strong>
+        <span>
+            Risk level could not be determined.
+        </span>
     </div>
-
-</div>
 
     {% endif %}
 
 </div>
 
+            </section>
+
+
+
+            <!-- SAFETY TIP -->
+
+            <section class="tip-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        💡
+                    </div>
+
+                    <div>
+
+                        <h2>Cyber Safety Tip</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tip-content">
+
+                    🛡️
+
+                    <p>
+                        Always verify the website address before
+                        entering passwords, OTPs or other sensitive
+                        information.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+
+<!-- ================= SCAN SCRIPT ================= -->
+
 <script>
 
-document.getElementById("scanForm").addEventListener("submit", function(){
+const scanForm = document.getElementById("scanForm");
+const loading = document.getElementById("loading");
 
-    document.getElementById("loading").style.display="block";
+if (scanForm) {
 
-});
+    scanForm.addEventListener("submit", function () {
+
+        if (loading) {
+
+            loading.style.display = "block";
+
+        }
+
+    });
+
+}
 
 </script>
 

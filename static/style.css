@@ -928,3 +928,2584 @@ body.dark .analysis-card{
     grid-template-columns:1fr 1fr;
     gap:20px;
 }
+
+/* =========================================================
+   PHISHGUARD AI - PROFESSIONAL SCAN PAGE
+   ========================================================= */
+
+
+/* Main page */
+
+.phish-scan-page {
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 45px 25px 70px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ================= HERO ================= */
+
+.scan-hero {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    text-align: left;
+
+    margin-bottom: 30px;
+
+}
+
+
+.scan-shield {
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.25);
+
+}
+
+
+.scan-hero h1 {
+
+    margin: 0;
+
+    font-size: 38px;
+
+    font-weight: 800;
+
+    color: #14213d;
+
+}
+
+
+.scan-hero p {
+
+    margin: 8px 0 0;
+
+    color: #536987;
+
+    font-size: 16px;
+
+}
+
+
+/* ================= SCANNER BOX ================= */
+
+.scanner-box {
+
+    background: rgba(255,255,255,0.92);
+
+    border: 1px solid rgba(255,255,255,0.9);
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 15px 45px rgba(30, 64, 175, 0.12);
+
+    margin-bottom: 25px;
+
+}
+
+
+.url-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.url-input-box {
+
+    flex: 1;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 18px;
+
+    border: 1px solid #d9e3f2;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+
+}
+
+
+.url-icon {
+
+    font-size: 21px;
+
+}
+
+
+.url-input-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 16px;
+
+    color: #1e293b;
+
+}
+
+
+.url-input-box input::placeholder {
+
+    color: #8ca0bd;
+
+}
+
+
+.professional-scan-btn {
+
+    height: 58px;
+
+    min-width: 230px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 0 28px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #2196f3,
+        #635bff
+    );
+
+    box-shadow:
+        0 10px 25px rgba(59, 130, 246, 0.25);
+
+    transition: 0.25s ease;
+
+}
+
+
+.professional-scan-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(59, 130, 246, 0.35);
+
+}
+
+
+.example-url {
+
+    margin-top: 12px;
+
+    padding-left: 15px;
+
+    color: #60789b;
+
+    font-size: 14px;
+
+}
+
+
+.example-url strong {
+
+    color: #4269a8;
+
+}
+
+
+/* ================= LOADING ================= */
+
+.scan-loading {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 25px 10px 5px;
+
+}
+
+
+.loading-spinner {
+
+    width: 38px;
+    height: 38px;
+
+    margin: auto;
+
+    border: 4px solid #dbeafe;
+
+    border-top-color: #2563eb;
+
+    border-radius: 50%;
+
+    animation: phishSpin 0.9s linear infinite;
+
+}
+
+
+.scan-loading h3 {
+
+    margin: 14px 0 5px;
+
+    color: #19345c;
+
+}
+
+
+.scan-loading p {
+
+    margin: 0;
+
+    color: #6b7f9d;
+
+}
+
+
+@keyframes phishSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ================= RESULT ================= */
+
+.professional-result {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 24px 28px;
+
+    border-radius: 22px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid transparent;
+
+}
+
+
+.professional-result.safe {
+
+    background: linear-gradient(
+        135deg,
+        #ecfdf5,
+        #f0fdf4
+    );
+
+    border-color: #c6f6dc;
+
+}
+
+
+.professional-result.phishing {
+
+    background: linear-gradient(
+        135deg,
+        #fff1f2,
+        #fff7f7
+    );
+
+    border-color: #fecdd3;
+
+}
+
+
+.professional-result.malware {
+
+    background: linear-gradient(
+        135deg,
+        #faf5ff,
+        #fdf8ff
+    );
+
+    border-color: #e9d5ff;
+
+}
+
+
+.professional-result.defacement {
+
+    background: linear-gradient(
+        135deg,
+        #fff7ed,
+        #fffbeb
+    );
+
+    border-color: #fed7aa;
+
+}
+
+
+.professional-result.suspicious {
+
+    background: linear-gradient(
+        135deg,
+        #fffbeb,
+        #fff7ed
+    );
+
+    border-color: #fde68a;
+
+}
+
+
+.result-icon {
+
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+}
+
+
+.safe .result-icon {
+
+    background: #10b981;
+
+}
+
+
+.phishing .result-icon {
+
+    background: #ef4444;
+
+}
+
+
+.malware .result-icon {
+
+    background: #8b5cf6;
+
+}
+
+
+.defacement .result-icon {
+
+    background: #f97316;
+
+}
+
+
+.suspicious .result-icon {
+
+    background: #f59e0b;
+
+}
+
+
+.result-main {
+
+    flex: 1;
+
+}
+
+
+.result-main h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 27px;
+
+    color: #14213d;
+
+}
+
+
+.result-main p {
+
+    margin: 0;
+
+    color: #58708f;
+
+    line-height: 1.5;
+
+}
+
+
+.confidence-area {
+
+    min-width: 150px;
+
+    text-align: center;
+
+    padding-left: 20px;
+
+    border-left: 1px solid rgba(100,120,150,0.18);
+
+}
+
+
+.confidence-area span {
+
+    display: block;
+
+    color: #60789b;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.confidence-area strong {
+
+    font-size: 28px;
+
+    color: #14213d;
+
+}
+
+
+/* ================= GRID ================= */
+
+.scan-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 20px;
+
+}
+
+
+/* ================= COMMON CARDS ================= */
+
+.security-card,
+.risk-card,
+.tip-card {
+
+    background: rgba(255,255,255,0.94);
+
+    border: 1px solid #e1eaf5;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(30,64,175,0.07);
+
+    box-sizing: border-box;
+
+}
+
+
+.card-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.heading-icon {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    background: #eef4ff;
+
+    font-size: 20px;
+
+}
+
+
+.card-heading h2 {
+
+    margin: 0;
+
+    font-size: 20px;
+
+    color: #14213d;
+
+}
+
+
+.card-heading span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #7b8fa9;
+
+    font-size: 13px;
+
+}
+
+
+/* ================= SECURITY LIST ================= */
+
+.security-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.security-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #edf2f7;
+
+    color: #334e70;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+}
+
+
+.security-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.security-status {
+
+    flex-shrink: 0;
+
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff4e5;
+
+    color: #f59e0b;
+
+}
+
+
+/* ================= ALL CLEAR ================= */
+
+.all-clear {
+
+    display: flex;
+
+    gap: 14px;
+
+    align-items: center;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: #ecfdf5;
+
+}
+
+
+.clear-icon {
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #10b981;
+
+    color: white;
+
+    font-weight: 800;
+
+}
+
+
+.all-clear strong {
+
+    color: #087f5b;
+
+}
+
+
+.all-clear p {
+
+    margin: 4px 0 0;
+
+    color: #547a6c;
+
+    font-size: 13px;
+
+}
+
+
+/* ================= RIGHT COLUMN ================= */
+
+.right-scan-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+/* ================= RISK ================= */
+
+.risk-display {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #f1fdf8;
+
+}
+
+
+.risk-dot {
+
+    width: 25px;
+    height: 25px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+}
+
+
+.risk-dot.low {
+
+    background: #10b981;
+
+    box-shadow:
+        0 0 0 8px rgba(16,185,129,0.12);
+
+}
+
+
+.risk-dot.medium {
+
+    background: #f59e0b;
+
+    box-shadow:
+        0 0 0 8px rgba(245,158,11,0.12);
+
+}
+
+
+.risk-dot.high {
+
+    background: #ef4444;
+
+    box-shadow:
+        0 0 0 8px rgba(239,68,68,0.12);
+
+}
+
+
+.risk-display strong {
+
+    display: block;
+
+    font-size: 24px;
+
+    color: #087f5b;
+
+}
+
+
+.risk-dot.medium + div strong {
+
+    color: #b45309;
+
+}
+
+
+.risk-dot.high + div strong {
+
+    color: #dc2626;
+
+}
+
+
+.risk-display span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #60789b;
+
+    font-size: 13px;
+
+}
+
+
+/* ================= TIP ================= */
+
+.tip-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #f1f5ff,
+        #f6f3ff
+    );
+
+}
+
+
+.tip-content > :first-child {
+
+    font-size: 25px;
+
+}
+
+
+.tip-content p {
+
+    margin: 0;
+
+    color: #344b70;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .scan-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .phish-scan-page {
+
+        padding: 30px 15px 50px;
+
+    }
+
+
+    .scan-hero {
+
+        text-align: center;
+
+        flex-direction: column;
+
+    }
+
+
+    .scan-hero h1 {
+
+        font-size: 29px;
+
+    }
+
+
+    .scan-hero p {
+
+        font-size: 14px;
+
+    }
+
+
+    .url-row {
+
+        flex-direction: column;
+
+    }
+
+
+    .url-input-box {
+
+        width: 100%;
+
+    }
+
+
+    .professional-scan-btn {
+
+        width: 100%;
+
+    }
+
+
+    .professional-result {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .confidence-area {
+
+        border-left: none;
+
+        border-top: 1px solid rgba(100,120,150,0.18);
+
+        padding: 15px 0 0;
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   DARK MODE
+   Works with common body.dark-mode implementations
+   ========================================================= */
+
+body.dark-mode .phish-scan-page {
+
+    color: #e5edf8;
+
+}
+
+
+body.dark-mode .scan-hero h1 {
+
+    color: #f1f5ff;
+
+}
+
+
+body.dark-mode .scan-hero p {
+
+    color: #aabbd3;
+
+}
+
+
+body.dark-mode .scanner-box,
+body.dark-mode .security-card,
+body.dark-mode .risk-card,
+body.dark-mode .tip-card {
+
+    background: #111d31;
+
+    border-color: #263957;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.25);
+
+}
+
+
+body.dark-mode .url-input-box {
+
+    background: #0c1729;
+
+    border-color: #304563;
+
+}
+
+
+body.dark-mode .url-input-box input {
+
+    color: #f1f5f9;
+
+}
+
+
+body.dark-mode .url-input-box input::placeholder {
+
+    color: #7286a4;
+
+}
+
+
+body.dark-mode .example-url {
+
+    color: #91a6c3;
+
+}
+
+
+body.dark-mode .example-url strong {
+
+    color: #8bb8ff;
+
+}
+
+
+body.dark-mode .result-main h2 {
+
+    color: #f1f5f9;
+
+}
+
+
+body.dark-mode .result-main p {
+
+    color: #b1c2d8;
+
+}
+
+
+body.dark-mode .confidence-area strong {
+
+    color: #f1f5f9;
+
+}
+
+
+body.dark-mode .confidence-area span {
+
+    color: #9aadc7;
+
+}
+
+
+body.dark-mode .card-heading h2 {
+
+    color: #f1f5f9;
+
+}
+
+
+body.dark-mode .card-heading span {
+
+    color: #91a6c3;
+
+}
+
+
+body.dark-mode .security-item {
+
+    color: #c5d3e5;
+
+    border-color: #243650;
+
+}
+
+
+body.dark-mode .tip-content p {
+
+    color: #c4d2e4;
+
+}
+
+
+body.dark-mode .loading-spinner {
+
+    border-color: #263957;
+
+    border-top-color: #60a5fa;
+
+}
+
+/* =========================================================
+   SECURITY & DATA PROTECTION PAGE
+   ========================================================= */
+
+.info-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 30px 70px;
+}
+
+/* ---------- HERO ---------- */
+
+.info-hero {
+    text-align: center;
+    padding: 45px 25px;
+    margin-bottom: 35px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #eef6ff, #ffffff);
+    border: 1px solid #dbeafe;
+    box-shadow: 0 10px 30px rgba(30, 100, 200, 0.10);
+}
+
+.info-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+    font-size: 38px;
+
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.18);
+}
+
+.info-hero h1 {
+    margin: 0 0 12px;
+    font-size: 36px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.info-hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ---------- CARD GRID ---------- */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+/* ---------- SECURITY CARDS ---------- */
+
+.info-card {
+    position: relative;
+
+    padding: 30px;
+    border-radius: 22px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.16),
+        0 0 20px rgba(59, 130, 246, 0.08);
+}
+
+
+/* ---------- CARD ICON ---------- */
+
+.info-card-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 16px;
+
+    font-size: 28px;
+
+    background: #eff6ff;
+
+    box-shadow: inset 0 0 0 1px #dbeafe;
+}
+
+.info-card h2 {
+    margin: 0 0 12px;
+
+    font-size: 21px;
+    color: #111827;
+}
+
+.info-card p {
+    color: #64748b;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* ---------- LIST ---------- */
+
+.info-card ul {
+    margin-top: 18px;
+    padding-left: 20px;
+}
+
+.info-card li {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* ---------- SECURITY EXAMPLE ---------- */
+
+.security-example {
+    margin-top: 22px;
+    padding: 17px;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.security-example strong {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #2563eb;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.security-example p {
+    margin: 7px 0;
+    font-size: 13px;
+}
+
+.security-example code {
+    padding: 5px 9px;
+
+    border-radius: 7px;
+
+    background: #e0f2fe;
+    color: #0369a1;
+
+    font-family: monospace;
+}
+
+
+/* ---------- COURSE OUTCOME BOX ---------- */
+
+.co-box {
+    margin-top: 35px;
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #f8fbff
+    );
+
+    border: 1px solid #bfdbfe;
+
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+
+    text-align: center;
+}
+
+.co-box span {
+    display: inline-block;
+
+    padding: 6px 13px;
+
+    border-radius: 20px;
+
+    background: #dbeafe;
+    color: #1d4ed8;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.co-box h2 {
+    margin: 12px 0 8px;
+
+    font-size: 28px;
+    color: #111827;
+}
+
+.co-box p {
+    max-width: 700px;
+    margin: auto;
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DARK MODE — NEON CYBER SECURITY STYLE
+   ========================================================= */
+
+body.dark-mode .info-page {
+    color: #e5f3ff;
+}
+
+
+/* ---------- DARK HERO ---------- */
+
+body.dark-mode .info-hero {
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(0, 140, 255, 0.16),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #07111f,
+            #0a1628
+        );
+
+    border: 1px solid rgba(0, 183, 255, 0.28);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(0, 174, 255, 0.08);
+}
+
+body.dark-mode .info-icon {
+    background: rgba(0, 174, 255, 0.10);
+
+    border: 1px solid rgba(0, 191, 255, 0.35);
+
+    box-shadow:
+        0 0 18px rgba(0, 183, 255, 0.25),
+        inset 0 0 20px rgba(0, 183, 255, 0.05);
+}
+
+body.dark-mode .info-hero h1 {
+    color: #f1f8ff;
+
+    text-shadow:
+        0 0 15px rgba(0, 183, 255, 0.25);
+}
+
+body.dark-mode .info-hero p {
+    color: #9db4ca;
+}
+
+
+/* ---------- DARK CARDS ---------- */
+
+body.dark-mode .info-card {
+    background:
+        linear-gradient(
+            145deg,
+            #0a1728,
+            #07111f
+        );
+
+    border: 1px solid rgba(0, 174, 255, 0.20);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.40),
+        inset 0 0 20px rgba(0, 140, 255, 0.025);
+}
+
+body.dark-mode .info-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00b7ff;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(0, 183, 255, 0.28),
+        0 0 45px rgba(0, 183, 255, 0.08);
+}
+
+
+/* ---------- DARK CARD ICON ---------- */
+
+body.dark-mode .info-card-icon {
+    background: rgba(0, 174, 255, 0.09);
+
+    border: 1px solid rgba(0, 183, 255, 0.25);
+
+    box-shadow:
+        0 0 15px rgba(0, 183, 255, 0.12);
+}
+
+
+/* ---------- DARK TEXT ---------- */
+
+body.dark-mode .info-card h2 {
+    color: #eef8ff;
+}
+
+body.dark-mode .info-card p {
+    color: #9bb1c5;
+}
+
+body.dark-mode .info-card li {
+    color: #a8bdce;
+}
+
+
+/* ---------- DARK EXAMPLE ---------- */
+
+body.dark-mode .security-example {
+    background: rgba(0, 183, 255, 0.045);
+
+    border: 1px solid rgba(0, 183, 255, 0.17);
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 183, 255, 0.025);
+}
+
+body.dark-mode .security-example strong {
+    color: #38bdf8;
+}
+
+body.dark-mode .security-example p {
+    color: #9bb1c5;
+}
+
+body.dark-mode .security-example code {
+    background: rgba(0, 183, 255, 0.10);
+
+    color: #67d5ff;
+
+    border: 1px solid rgba(0, 183, 255, 0.15);
+
+    box-shadow:
+        0 0 10px rgba(0, 183, 255, 0.08);
+}
+
+
+/* ---------- DARK CO BOX ---------- */
+
+body.dark-mode .co-box {
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(0, 174, 255, 0.10),
+            transparent 65%
+        ),
+        #081525;
+
+    border: 1px solid rgba(0, 183, 255, 0.25);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(0, 183, 255, 0.07);
+}
+
+body.dark-mode .co-box span {
+    background: rgba(0, 183, 255, 0.12);
+
+    color: #38bdf8;
+
+    border: 1px solid rgba(0, 183, 255, 0.20);
+}
+
+body.dark-mode .co-box h2 {
+    color: #f0f9ff;
+
+    text-shadow:
+        0 0 12px rgba(0, 183, 255, 0.20);
+}
+
+body.dark-mode .co-box p {
+    color: #9bb1c5;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-hero h1 {
+        font-size: 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .info-page {
+        padding: 30px 16px 50px;
+    }
+
+    .info-hero {
+        padding: 35px 20px;
+    }
+
+    .info-hero h1 {
+        font-size: 26px;
+    }
+
+    .info-card {
+        padding: 24px;
+    }
+
+    .co-box {
+        padding: 25px 20px;
+    }
+
+}
+
+/* =========================================================
+   SECURITY PAGE - FINAL DARK MODE
+   Neon Cyber Security UI
+   ========================================================= */
+
+/* Dark mode security page */
+.dark-mode .info-page,
+body.dark-mode .info-page {
+    color: #e8f7ff;
+}
+
+
+/* ---------- HERO ---------- */
+
+.dark-mode .info-hero,
+body.dark-mode .info-hero {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0, 174, 255, 0.16),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #071421,
+            #050c16
+        );
+
+    border: 1px solid rgba(0, 191, 255, 0.35);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.55),
+        0 0 30px rgba(0, 183, 255, 0.10);
+}
+
+.dark-mode .info-hero h1,
+body.dark-mode .info-hero h1 {
+    color: #f0faff;
+    text-shadow: 0 0 18px rgba(0, 191, 255, 0.25);
+}
+
+.dark-mode .info-hero p,
+body.dark-mode .info-hero p {
+    color: #9bb7ca;
+}
+
+.dark-mode .info-icon,
+body.dark-mode .info-icon {
+    background: rgba(0, 183, 255, 0.10);
+
+    border: 1px solid rgba(0, 191, 255, 0.35);
+
+    box-shadow:
+        0 0 20px rgba(0, 183, 255, 0.25),
+        inset 0 0 20px rgba(0, 183, 255, 0.08);
+}
+
+
+/* =========================================================
+   SECURITY CARDS
+   ========================================================= */
+
+.dark-mode .info-card,
+body.dark-mode .info-card {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1a2b 0%,
+            #07111d 100%
+        ) !important;
+
+    border: 1px solid rgba(0, 191, 255, 0.28) !important;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.55),
+        inset 0 0 25px rgba(0, 174, 255, 0.025) !important;
+
+    color: #e8f7ff;
+}
+
+
+/* ---------- CARD HOVER ---------- */
+
+.dark-mode .info-card:hover,
+body.dark-mode .info-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00c8ff !important;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.65),
+        0 0 15px rgba(0, 200, 255, 0.35),
+        0 0 40px rgba(0, 183, 255, 0.12) !important;
+}
+
+
+/* ---------- CARD ICON ---------- */
+
+.dark-mode .info-card-icon,
+body.dark-mode .info-card-icon {
+    background:
+        rgba(0, 183, 255, 0.08) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.30) !important;
+
+    box-shadow:
+        0 0 15px rgba(0, 183, 255, 0.15);
+}
+
+
+/* ---------- CARD TEXT ---------- */
+
+.dark-mode .info-card h2,
+body.dark-mode .info-card h2 {
+    color: #f1faff !important;
+
+    text-shadow:
+        0 0 10px rgba(0, 191, 255, 0.08);
+}
+
+.dark-mode .info-card p,
+body.dark-mode .info-card p {
+    color: #9db7c9 !important;
+}
+
+.dark-mode .info-card li,
+body.dark-mode .info-card li {
+    color: #a9c0d1 !important;
+}
+
+
+/* =========================================================
+   HASH EXAMPLE BOX
+   ========================================================= */
+
+.dark-mode .security-example,
+body.dark-mode .security-example {
+    background:
+        rgba(0, 183, 255, 0.045) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.20) !important;
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 183, 255, 0.04);
+}
+
+.dark-mode .security-example strong,
+body.dark-mode .security-example strong {
+    color: #38c9ff;
+}
+
+.dark-mode .security-example p,
+body.dark-mode .security-example p {
+    color: #9db7c9;
+}
+
+.dark-mode .security-example code,
+body.dark-mode .security-example code {
+    background:
+        rgba(0, 183, 255, 0.10);
+
+    color: #67d9ff;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.20);
+
+    box-shadow:
+        0 0 10px rgba(0, 183, 255, 0.10);
+}
+
+
+/* =========================================================
+   EXTRA NEON EFFECT
+   ========================================================= */
+
+.dark-mode .info-card::before,
+body.dark-mode .info-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+    right: 15%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 200, 255, 0.7),
+        transparent
+    );
+
+    opacity: 0.6;
+}
+
+/* =========================================================
+   PHISHGUARD SECURITY PAGE
+   CORRECT DARK MODE - BODY.CLASS = dark
+   ========================================================= */
+
+body.dark .info-page {
+    color: #e8f7ff;
+}
+
+
+/* ================= HERO ================= */
+
+body.dark .info-hero {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0, 183, 255, 0.18),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #071522,
+            #040b13
+        ) !important;
+
+    border: 1px solid rgba(0, 191, 255, 0.35) !important;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.55),
+        0 0 30px rgba(0, 183, 255, 0.10) !important;
+}
+
+body.dark .info-hero h1 {
+    color: #f2fbff !important;
+
+    text-shadow:
+        0 0 18px rgba(0, 191, 255, 0.25);
+}
+
+body.dark .info-hero p {
+    color: #9db7ca !important;
+}
+
+
+/* ================= HERO ICON ================= */
+
+body.dark .info-icon {
+    background:
+        rgba(0, 183, 255, 0.10) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.35) !important;
+
+    box-shadow:
+        0 0 20px rgba(0, 183, 255, 0.25),
+        inset 0 0 20px rgba(0, 183, 255, 0.08);
+}
+
+
+/* =========================================================
+   SECURITY CARDS
+   ========================================================= */
+
+body.dark .info-card {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c2e,
+            #07111d
+        ) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.30) !important;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.55),
+        inset 0 0 25px rgba(0, 174, 255, 0.03) !important;
+
+    color: #e8f7ff !important;
+
+    position: relative;
+}
+
+
+/* ================= CARD HOVER ================= */
+
+body.dark .info-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00c8ff !important;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.65),
+        0 0 18px rgba(0, 200, 255, 0.40),
+        0 0 45px rgba(0, 183, 255, 0.12) !important;
+}
+
+
+/* ================= CARD ICON ================= */
+
+body.dark .info-card-icon {
+    background:
+        rgba(0, 183, 255, 0.08) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.30) !important;
+
+    box-shadow:
+        0 0 16px rgba(0, 183, 255, 0.18);
+}
+
+
+/* ================= CARD TEXT ================= */
+
+body.dark .info-card h2 {
+    color: #f1faff !important;
+
+    text-shadow:
+        0 0 10px rgba(0, 191, 255, 0.10);
+}
+
+body.dark .info-card p {
+    color: #9db7c9 !important;
+}
+
+body.dark .info-card li {
+    color: #a9c0d1 !important;
+}
+
+
+/* =========================================================
+   EXAMPLE BOX
+   ========================================================= */
+
+body.dark .security-example {
+    background:
+        rgba(0, 183, 255, 0.045) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.20) !important;
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 183, 255, 0.04);
+}
+
+body.dark .security-example strong {
+    color: #38c9ff !important;
+}
+
+body.dark .security-example p {
+    color: #9db7c9 !important;
+}
+
+body.dark .security-example code {
+    background:
+        rgba(0, 183, 255, 0.10) !important;
+
+    color: #67d9ff !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.20);
+
+    box-shadow:
+        0 0 10px rgba(0, 183, 255, 0.10);
+}
+
+
+/* ================= NEON TOP LINE ================= */
+
+body.dark .info-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+    right: 15%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00c8ff,
+            transparent
+        );
+
+    opacity: 0.65;
+}
+
+/* =========================================================
+   PHISHGUARD AI
+   GLOBAL NEON CYBER UI
+   DARK MODE FOR ALL SCREENS EXCEPT ABOUT
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL DARK PAGE BACKGROUND
+   ========================================================= */
+
+body.dark {
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(0, 174, 255, 0.06),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(0, 120, 255, 0.05),
+            transparent 35%
+        ),
+        #050b13 !important;
+
+    color: #e8f7ff;
+}
+
+
+/* =========================================================
+   GLOBAL MAIN CONTENT
+   ========================================================= */
+
+body.dark main {
+    background: transparent;
+}
+
+
+/* =========================================================
+   GLOBAL HEADINGS
+   ========================================================= */
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4 {
+    color: #f1faff;
+}
+
+
+/* =========================================================
+   GLOBAL PARAGRAPHS
+   ========================================================= */
+
+body.dark p {
+    color: #9db7ca;
+}
+
+
+/* =========================================================
+   GLOBAL LINKS
+   ========================================================= */
+
+body.dark main a {
+    color: #38c9ff;
+}
+
+body.dark main a:hover {
+    color: #7ddfff;
+}
+
+
+/* =========================================================
+   HOME / HERO SECTIONS
+   ========================================================= */
+
+body.dark .hero,
+body.dark .home-hero,
+body.dark .hero-section,
+body.dark .banner,
+body.dark .welcome-section {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0, 183, 255, 0.15),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #071522,
+            #040b13
+        ) !important;
+
+    border-color: rgba(0, 191, 255, 0.30) !important;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(0, 183, 255, 0.08) !important;
+}
+
+
+/* =========================================================
+   HOME FEATURE CARDS
+   ========================================================= */
+
+body.dark .feature-card,
+body.dark .home-card,
+body.dark .feature-box,
+body.dark .card {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c2e,
+            #07111d
+        ) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.25) !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.50),
+        inset 0 0 20px rgba(0, 174, 255, 0.025) !important;
+
+    color: #e8f7ff;
+}
+
+
+/* =========================================================
+   GLOBAL CARD HOVER
+   ========================================================= */
+
+body.dark .feature-card:hover,
+body.dark .home-card:hover,
+body.dark .feature-box:hover,
+body.dark .card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(0, 200, 255, 0.75) !important;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.60),
+        0 0 18px rgba(0, 200, 255, 0.32),
+        0 0 40px rgba(0, 183, 255, 0.10) !important;
+}
+
+
+/* =========================================================
+   SCAN PAGE
+   ========================================================= */
+
+body.dark .scan-container,
+body.dark .scan-box,
+body.dark .scanner-card,
+body.dark .scan-card,
+body.dark .url-box,
+body.dark .result-box,
+body.dark .analysis-box {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c2e,
+            #07111d
+        ) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.28) !important;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(0, 183, 255, 0.06) !important;
+
+    color: #e8f7ff;
+}
+
+
+/* =========================================================
+   URL INPUT
+   ========================================================= */
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+    background:
+        #071421 !important;
+
+    color:
+        #e8f7ff !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.28) !important;
+
+    box-shadow:
+        inset 0 0 12px rgba(0, 183, 255, 0.03);
+}
+
+
+/* INPUT PLACEHOLDER */
+
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+    color: #718da2;
+}
+
+
+/* INPUT FOCUS */
+
+body.dark input:focus,
+body.dark textarea:focus,
+body.dark select:focus {
+    outline: none;
+
+    border-color:
+        #00c8ff !important;
+
+    box-shadow:
+        0 0 0 2px rgba(0, 200, 255, 0.10),
+        0 0 18px rgba(0, 200, 255, 0.20) !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+body.dark main button,
+body.dark main .btn,
+body.dark main .button,
+body.dark main input[type="submit"] {
+    border:
+        1px solid rgba(0, 200, 255, 0.45);
+
+    box-shadow:
+        0 0 12px rgba(0, 183, 255, 0.12);
+
+    transition:
+        0.25s ease;
+}
+
+
+/* BUTTON HOVER */
+
+body.dark main button:hover,
+body.dark main .btn:hover,
+body.dark main .button:hover,
+body.dark main input[type="submit"]:hover {
+    border-color:
+        #00c8ff;
+
+    box-shadow:
+        0 0 15px rgba(0, 200, 255, 0.35),
+        0 0 30px rgba(0, 183, 255, 0.12);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+body.dark .stat-card,
+body.dark .stats-card,
+body.dark .dashboard-card,
+body.dark .dashboard-box,
+body.dark .stat-box {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c2e,
+            #07111d
+        ) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.25) !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.50),
+        0 0 15px rgba(0, 183, 255, 0.05) !important;
+
+    color:
+        #e8f7ff;
+}
+
+
+/* DASHBOARD HOVER */
+
+body.dark .stat-card:hover,
+body.dark .stats-card:hover,
+body.dark .dashboard-card:hover,
+body.dark .dashboard-box:hover,
+body.dark .stat-box:hover {
+    border-color:
+        #00c8ff !important;
+
+    box-shadow:
+        0 0 18px rgba(0, 200, 255, 0.28),
+        0 0 35px rgba(0, 183, 255, 0.10) !important;
+}
+
+
+/* =========================================================
+   HISTORY TABLE
+   ========================================================= */
+
+body.dark table {
+    background:
+        #081522 !important;
+
+    color:
+        #dff6ff;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.22);
+}
+
+body.dark th {
+    background:
+        rgba(0, 183, 255, 0.10) !important;
+
+    color:
+        #55d5ff !important;
+
+    border-bottom:
+        1px solid rgba(0, 191, 255, 0.25);
+}
+
+body.dark td {
+    color:
+        #a9c1d2 !important;
+
+    border-bottom:
+        1px solid rgba(0, 191, 255, 0.10);
+}
+
+body.dark tr:hover td {
+    background:
+        rgba(0, 183, 255, 0.045);
+}
+
+
+/* =========================================================
+   HISTORY / CONTENT BOXES
+   ========================================================= */
+
+body.dark .history-card,
+body.dark .history-box,
+body.dark .content-card,
+body.dark .content-box {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c2e,
+            #07111d
+        ) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.25) !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.50),
+        0 0 15px rgba(0, 183, 255, 0.05) !important;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+body.dark .contact-card,
+body.dark .contact-box,
+body.dark .contact-container,
+body.dark .contact-form {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c2e,
+            #07111d
+        ) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.25) !important;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(0, 183, 255, 0.06) !important;
+}
+
+
+/* =========================================================
+   SECURITY PAGE
+   ========================================================= */
+
+body.dark .info-hero {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0, 183, 255, 0.18),
+            transparent 60%
+        ),
+        linear-gradient(
+            145deg,
+            #071522,
+            #040b13
+        ) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.35) !important;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.55),
+        0 0 30px rgba(0, 183, 255, 0.10) !important;
+}
+
+
+body.dark .info-card {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1c2e,
+            #07111d
+        ) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.30) !important;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.55),
+        inset 0 0 25px rgba(0, 174, 255, 0.03) !important;
+}
+
+
+body.dark .info-card:hover {
+    border-color:
+        #00c8ff !important;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.65),
+        0 0 18px rgba(0, 200, 255, 0.40),
+        0 0 45px rgba(0, 183, 255, 0.12) !important;
+}
+
+
+/* =========================================================
+   ICON BOXES
+   ========================================================= */
+
+body.dark .icon-box,
+body.dark .card-icon,
+body.dark .feature-icon {
+    background:
+        rgba(0, 183, 255, 0.08) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.28);
+
+    box-shadow:
+        0 0 15px rgba(0, 183, 255, 0.14);
+}
+
+
+/* SECURITY ICON */
+
+body.dark .info-card-icon {
+    background:
+        rgba(0, 183, 255, 0.08) !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.30) !important;
+
+    box-shadow:
+        0 0 16px rgba(0, 183, 255, 0.18);
+}
+
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+body.dark .badge,
+body.dark .tag,
+body.dark .label {
+    background:
+        rgba(0, 183, 255, 0.10);
+
+    color:
+        #50d4ff;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.25);
+}
+
+
+/* =========================================================
+   CODE / EXAMPLE BOXES
+   ========================================================= */
+
+body.dark code,
+body.dark pre {
+    background:
+        #06121e !important;
+
+    color:
+        #67d9ff !important;
+
+    border:
+        1px solid rgba(0, 191, 255, 0.18);
+}
+
+
+/* =========================================================
+   ALERT / RESULT BOXES
+   ========================================================= */
+
+body.dark .alert,
+body.dark .result,
+body.dark .result-card,
+body.dark .warning-box,
+body.dark .success-box {
+    background:
+        #081725 !important;
+
+    border-color:
+        rgba(0, 191, 255, 0.25) !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+body.dark footer {
+    background:
+        #030911 !important;
+
+    border-top:
+        1px solid rgba(0, 191, 255, 0.12);
+
+    box-shadow:
+        0 -5px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   SUBTLE NEON TOP LINE FOR CARDS
+   ========================================================= */
+
+body.dark .info-card::before,
+body.dark .feature-card::before,
+body.dark .home-card::before,
+body.dark .dashboard-card::before,
+body.dark .stat-card::before,
+body.dark .contact-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+    right: 15%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00c8ff,
+            transparent
+        );
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+body.dark::-webkit-scrollbar {
+    width: 9px;
+}
+
+body.dark::-webkit-scrollbar-track {
+    background:
+        #030911;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            #087ea4,
+            #00c8ff
+        );
+
+    border-radius:
+        10px;
+}
+
+body.dark::-webkit-scrollbar-thumb:hover {
+    background:
+        #29d4ff;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body.dark .info-card,
+    body.dark .feature-card,
+    body.dark .home-card,
+    body.dark .dashboard-card,
+    body.dark .stat-card,
+    body.dark .contact-card {
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.50),
+            0 0 12px rgba(0, 183, 255, 0.07) !important;
+    }
+
+}
